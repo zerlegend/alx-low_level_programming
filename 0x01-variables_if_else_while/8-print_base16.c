@@ -1,7 +1,9 @@
 #include <stdio.h>
 /**
- * main - entry point
- * hexadecimal 
+ * main - main block
+ * Description: prints hexadecimal
+ * starting from 48 t0 57, followed 97 to 102.
+ * Return: 0
  */
 int main(void)
 {

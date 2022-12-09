@@ -1,8 +1,7 @@
 #include <stdio.h>
 /**
  * main - entry point
- * hexadecimal
- * Return: zero 
+ * hexadecimal 
  */
 int main(void)
 {

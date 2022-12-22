@@ -10,22 +10,23 @@
 
 char *cap_string(char *s)
 {
-	int i = 0;
-
-	while (s[i] != '\0')
-	{
-		if (s[i] >= 97 && s[i] <= 122)
-		{
-			if (i == 0)
-			{
-				s[i] -= 32;
-			}
-			if (s[i - 1] == 32 || s[i - 1] == 9 || s[i - 1] == 10 || s[i - 1] == 44 || s[i - 1] == 59 || s[i - 1] == 46 || s[i - 1] == 33 || s[i - 1] == 63 || s[i - 1] == 34 || s[i - 1] == 40 || s[i - 1] == 41 || s[i - 1] == 123 || s[i - 1] == 124)
-			{
-				s[i] -= 32;
-			}
-		}
-		i++;
-	}
-	return (s);
+int i = 0, j = 0;
+char seps[] = {32, 10, 9, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
+int size = sizeof(seps) / sizeof(seps[0]);
+while (s[i] != 0)
+{
+char c = s[i];
+for (j = 0; j < size; j++)
+{
+if (c == seps[j] && s[i + 1] >= 'a' && s[i + 1] <= 'z')
+{
+s[i + 1] = 'A' + (s[i + 1] - 'a');
+break;
+}
+}
+i++;
+}
+if (s[0] >= 'a' && s[0] <= 'z')
+s[0] = 'A' + (s[0] - 'a');
+return (s);
 }
